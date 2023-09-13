@@ -1,0 +1,16 @@
+resilience4j.circuitbreaker:
+  instances:
+    product:
+      slidingWindowType: TIME_BASED
+      slidingWindowSize: 10
+      minimumNumberOfCalls: 1
+      failureRateThreshold: 100
+      waitDurationInOpenState: 60s
+      permittedNumberOfCallsInHalfOpenState: 1
+    product_count:
+      slidingWindowType: COUNT_BASED
+      slidingWindowSize: 10
+      minimumNumberOfCalls: 5
+      failureRateThreshold: 50
+      waitDurationInOpenState: 20s
+      permittedNumberOfCallsInHalfOpenState: 4
